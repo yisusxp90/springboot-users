@@ -1,28 +1,28 @@
 {
 	"info": {
-		"_postman_id": "025cd76d-2280-4dc8-b01f-62f6190e0498",
+		"_postman_id": "34de7a3d-a390-435c-b301-e3a263b2d4f3",
 		"name": "test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "create users",
+			"name": "delete user",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get user",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/api/users/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"delete",
+						"1"
+					]
 				}
 			},
 			"response": []
@@ -30,21 +30,95 @@
 		{
 			"name": "update user",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"yuzma\",\n\t\"email\": \"yuzma123@gmail.com\",\n\t\"password\": \"Aa1123456\",\n\t\"phones\": [\n\t\t{\n\t\t\t\"number\": \"+56999999\",\n\t\t\t\"cityCode\": \"G2\",\n\t\t\t\"countryCode\": \"52\"\n\t\t},\n\t\t\t\t{\n\t\t\t\"number\": \"+56998888\",\n\t\t\t\"cityCode\": \"G3\",\n\t\t\t\"countryCode\": \"53\"\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/api/users/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"update",
+						"1"
+					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "delete user",
+			"name": "get users",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/api/users/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"yuzma\",\n\t\"email\": \"yuzma@gmail.com\",\n\t\"password\": \"Aa111111\",\n\t\"phones\": [\n\t\t{\n\t\t\t\"number\": \"+56999999\",\n\t\t\t\"cityCode\": \"G2\",\n\t\t\t\"countryCode\": \"52\"\n\t\t},\n\t\t\t\t{\n\t\t\t\"number\": \"+56998888\",\n\t\t\t\"cityCode\": \"G3\",\n\t\t\t\"countryCode\": \"53\"\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"create"
+					]
 				}
 			},
 			"response": []
